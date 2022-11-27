@@ -74,13 +74,72 @@ ShowArray(array1);
 
 int result = SummElem(array1);
 Console.WriteLine($"the sum of the elements standing in odd positions: {result}");
-*/
 
-
-
-/*
 Задача 38: 
 Задайте массив вещественных чисел. 
 Найдите разницу между максимальным и минимальным элементов массива.
 [3 7 22 2 78] -> 76
 */
+
+double [] CreateRandomArray ( int size, int minValue, int maxValue)
+{
+double [] newArray = new double[size]; 
+      for(int i = 0; i < size; i++)
+    {
+    double newArray1 = new Random().Next(minValue, maxValue +1); 
+    double newArray2 = new Random().NextDouble();
+    newArray[i] = newArray1 + newArray2;
+    newArray [i] = Math.Round(newArray[i], 3);
+    }
+    return newArray;
+}
+
+void ShowArray(double [] array)
+ {
+    for (int j = 0; j < array.Length; j++)
+    Console.Write(array [j] + " ");
+    Console.WriteLine(); 
+     }
+
+double NumberMax(double [] array)
+{
+    double max = array[0];
+  for( int i = 1; i < array.Length; i++)
+  {
+    if(array[i] > max)
+    {
+      max = array[i];
+    }
+  }
+  return max;
+}
+double NumberMin(double[] array)
+{
+    double min = array[0];
+  for( int i = 1; i < array.Length; i++)
+  {
+    if(array[i] < min)
+    {
+      min = array[i];
+    }
+  }
+  return min;
+}
+
+Console.Write("Input size of array: ");
+int size1 = Convert.ToInt32(Console.ReadLine());
+
+Console.WriteLine("Input min possible val of array: ");
+int minValue = Convert.ToInt32(Console.ReadLine());
+
+Console.WriteLine("Input max possible val of array: ");
+int maxValue = Convert.ToInt32(Console.ReadLine());
+
+double [] array = CreateRandomArray (size1, minValue, maxValue);
+ShowArray(array);
+
+double resultMax = NumberMax(array);
+double resultMin = NumberMin(array);
+
+Console.WriteLine($"the difference between the maximum and minimum array elements: {resultMax - resultMin}");
+
