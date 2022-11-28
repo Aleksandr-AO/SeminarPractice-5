@@ -34,7 +34,7 @@ ShowArray(array1);
 
 int array2 = CountUnevenNumber(array1);
 Console.WriteLine($"Count even number: {array2}");
-
+ 
 Задача 36: 
 Задайте одномерный массив, заполненный случайными числами.
 Найдите сумму элементов, стоящих на нечётных позициях.
@@ -74,7 +74,7 @@ ShowArray(array1);
 
 int result = SummElem(array1);
 Console.WriteLine($"the sum of the elements standing in odd positions: {result}");
-
+/*
 Задача 38: 
 Задайте массив вещественных чисел. 
 Найдите разницу между максимальным и минимальным элементов массива.
@@ -86,7 +86,7 @@ double [] CreateRandomArray ( int size, int minValue, int maxValue)
 double [] newArray = new double[size]; 
       for(int i = 0; i < size; i++)
     {
-    double newArray1 = new Random().Next(minValue, maxValue +1); 
+    double newArray1 = new Random().Next(minValue, maxValue); 
     double newArray2 = new Random().NextDouble();
     newArray[i] = newArray1 + newArray2;
     newArray [i] = Math.Round(newArray[i], 3);
